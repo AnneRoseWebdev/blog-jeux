@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Mon Blog Jeux{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+
+    <!-- IMAGE D'ACCUEIL EN BANNIÈRE -->
+    <div class="mb-5 text-center">
+        <img src="https://i.pinimg.com/474x/0e/90/f4/0e90f483f0796eb74675e7dae1590717.jpg" 
+             class="img-fluid rounded shadow"
+             alt="Bannière Jeux Vidéo" 
+             style="max-height: 300px; object-fit: cover; width: 70%;">
+    </div>
+
+    <!-- TEXTE D’ACCUEIL -->
+    <div class="bg-light p-5 rounded text-center shadow-sm mb-5">
+        <h1 class="mb-4">🎮 Bienvenue sur Mon Blog Jeux</h1>
+        <p class="lead">
+            Ce blog est dédié à l’univers passionnant du jeu vidéo.<br>
+            Vous y trouverez des fiches sur différents jeux, partagées par des passionnés.
+        </p>
+    </div>
+    <h2 class="mb-3 text-success">À propos du créateur</h2>
+    <p>
+        Je suis une étudainte passionnée de jeux vidéo depuis mon enfance 🎮.  
+        J’ai décidéE de créer ce blog pour partager ma passion avec vous,  
+        découvrir de nouveaux titres et échanger autour de nos coups de cœur.
+    </p>
+
+    <!-- SECTION ARTICLES -->
+    <section class="text-center my-5">
+        <h2 class="mb-4">🕹️ Mes derniers articles</h2>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="{{ path('app_article_index') }}" class="btn btn-primary btn-lg">
+                Voir les articles
+            </a>
+            <a href="{{ path('app_contact') }}" class="btn btn-outline-primary btn-lg">
+                Contactez-moi
+            </a>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des jeux vidéo{% endblock %}
+
+{% block body %}
+<div class="game-list-container">
+    <h1 class="text-center mb-4">
+        <i class="bi bi-controller"></i> Liste des jeux vidéo
+    </h1>
+
+    <div class="text-end mb-3">
+        <a href="{{ path('app_jeu_new') }}" class="btn btn-success">+ Ajouter un nouveau jeu</a>
+    </div>
+
+    <table class="table-custom">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for jeu in jeux %}
+                <tr>
+                    <td>{{ jeu.id }}</td>
+                    <td>{{ jeu.titre }}</td>
+                    <td>
+                        <a href="{{ path('app_jeu_show', {'id': jeu.id}) }}" class="btn-view">Voir</a>
+                        <a href="{{ path('app_jeu_edit', {'id': jeu.id}) }}" class="btn-edit">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">Aucun jeu trouvé.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
